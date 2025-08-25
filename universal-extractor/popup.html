@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Content Extractor</title>
+  <style>
+    body {
+      width: 400px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    h3 {
+      margin-top: 0;
+      color: #333;
+    }
+    #fileInput {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    #status {
+      font-style: italic;
+      color: #666;
+      height: 20px;
+      margin-bottom: 10px;
+    }
+    #output {
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+      padding: 10px;
+      min-height: 150px;
+      max-height: 300px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <h3>Universal Content Extractor</h3>
+  <input type="file" id="fileInput">
+  <div id="status">Select a file to begin.</div>
+  <h4>Extracted Content:</h4>
+  <div id="output"></div>
+
+  <!-- Import the required libraries -->
+  <script src="./lib/pdf.mjs" type="module"></script>
+  <script src="./lib/mammoth.browser.min.js"></script>
+  <!-- THIS LINE IS NOW CORRECTED TO USE THE LOCAL FILE -->
+  <script src='./lib/tesseract.min.js'></script>
+
+  <!-- Import the main application logic -->
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
